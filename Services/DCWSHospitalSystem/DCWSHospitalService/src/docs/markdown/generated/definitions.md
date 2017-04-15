@@ -1,0 +1,165 @@
+## Definitions
+### OpcoRequest
+|Name|Description|Required|Schema|Default|
+|----|----|----|----|----|
+|opcoId|Opco id|true|integer (int64)||
+|prefix|Prefix for particular opco id|true|string||
+|suffix|Suffix for particular opco id|true|string||
+
+
+### OpcoResList
+|Name|Description|Required|Schema|Default|
+|----|----|----|----|----|
+|errorDesc|Error code description|false|string||
+|opcoList|Opco List|false|SMEOpco array||
+|responseStatus|Status Code of the service call|true|integer (int32)||
+
+
+### OpcoResponse
+|Name|Description|Required|Schema|Default|
+|----|----|----|----|----|
+|errorDesc|Error code description|false|string||
+|opco|Opco details|false|SMEOpco||
+|responseStatus|Status Code of the service call|true|integer (int32)||
+
+
+### PackageCreateRequest
+|Name|Description|Required|Schema|Default|
+|----|----|----|----|----|
+|createdUser|Package created user|true|string||
+|noOfUnits|Numbet of units - amount|true|number (double)||
+|opcoId|Opco Id|true|integer (int64)||
+|packageCode|Package code|true|string||
+|packageDesc|Package description|true|string||
+|packageName|Package name|true|string||
+
+
+### PackageResList
+|Name|Description|Required|Schema|Default|
+|----|----|----|----|----|
+|errorDesc|Error code description|false|string||
+|packageList|Package List|false|PackageResponse array||
+|responseStatus|Status Code of the service call|true|integer (int32)||
+
+
+### PackageResponse
+|Name|Description|Required|Schema|Default|
+|----|----|----|----|----|
+|createdDate|Created date|true|string (date-time)||
+|createdUser|Created user|false|string||
+|modifyDate|Modified date|false|string (date-time)||
+|noOfUnits||false|number (double)||
+|opcoId||false|integer (int64)||
+|packageCode||false|string||
+|packageDesc||false|string||
+|packageId||false|integer (int64)||
+|packageName||false|string||
+|status||false|enum (INACTIVE, ACTIVE)||
+|updatedUser|Updated user|false|string||
+
+
+### PackageResponseRoot
+|Name|Description|Required|Schema|Default|
+|----|----|----|----|----|
+|errorDesc|Error code description|false|string||
+|package|Package details|false|PackageResponse||
+|responseStatus|Status Code of the service call|true|integer (int32)||
+
+
+### PackageUpdateRequest
+|Name|Description|Required|Schema|Default|
+|----|----|----|----|----|
+|noOfUnits|Numbet of units - amount|false|number (double)||
+|opcoId|Opco Id|false|integer (int64)||
+|packageCode|Package code|false|string||
+|packageDesc|Package description|false|string||
+|packageId|Package Id|true|integer (int64)||
+|packageName|Package name|false|string||
+|status|Status|false|integer (int64)||
+|updatedUser|Package updated user|true|string||
+
+
+### SME
+|Name|Description|Required|Schema|Default|
+|----|----|----|----|----|
+|smeId||false|integer (int64)||
+|smeName||false|string||
+|smeOpco||false|SMEOpco||
+|status||false|enum (INACTIVE, ACTIVE)||
+
+
+### SMEOpco
+|Name|Description|Required|Schema|Default|
+|----|----|----|----|----|
+|countryCode|Opco country code|true|string||
+|createdDate|Created date|true|string (date-time)||
+|createdUser|Created user|false|string||
+|currencyCode|Opco currency code|true|string||
+|modifyDate|Modified date|false|string (date-time)||
+|opcoId|Opco id|true|integer (int64)||
+|opcoName|Opco name|true|string||
+|prefix|Opco prefix|true|string||
+|reason|Reason|false|string||
+|status|Status to indicate Opco is active or not|true|enum (INACTIVE, ACTIVE)||
+|suffix|Opco suffix|true|string||
+|updatedUser|Updated user|false|string||
+
+
+### SMERequest
+
+SME Rest Request
+
+|Name|Description|Required|Schema|Default|
+|----|----|----|----|----|
+|smeId|SME Id|true|integer (int64)||
+|smeName|SME Name|true|string||
+|smeOpcoId|SME Opco Id|false|integer (int64)||
+|status|SME Status|false|integer (int64)||
+
+
+### SMEResList
+|Name|Description|Required|Schema|Default|
+|----|----|----|----|----|
+|errorDesc|Error code description|false|string||
+|responseStatus|Status Code of the service call|true|integer (int32)||
+|smeResponseList||false|SMEResponse array||
+
+
+### SMEResponse
+|Name|Description|Required|Schema|Default|
+|----|----|----|----|----|
+|errorDesc|Error code description|false|string||
+|responseStatus|Status Code of the service call|true|integer (int32)||
+|smeId||false|integer (int64)||
+|smeName||false|string||
+|smeOpcoId||false|integer (int64)||
+|status||false|enum (INACTIVE, ACTIVE)||
+
+
+### UserRequest
+|Name|Description|Required|Schema|Default|
+|----|----|----|----|----|
+|addedDate||false|string (date-time)||
+|addedUser||false|string||
+|email||false|string||
+|lastLogging||false|string (date-time)||
+|name||false|string||
+|opcoId||false|SMEOpco||
+|passWord||false|string||
+|smeId||false|SME||
+|status||false|enum (INACTIVE, ACTIVE)||
+|updatedDate||false|string (date-time)||
+|updatedUser||false|string||
+|userId||false|integer (int64)||
+|userName||false|string||
+
+
+### UserResponse
+|Name|Description|Required|Schema|Default|
+|----|----|----|----|----|
+|code||false|string||
+|message||false|string||
+|status||false|string||
+|userRequest||false|UserRequest||
+
+

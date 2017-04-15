@@ -1,0 +1,455 @@
+== Paths
+=== getAllActiveOpco
+----
+GET /rest/opco/getAllActiveOpco
+----
+
+==== Responses
+[options="header"]
+|===
+|HTTP Code|Description|Schema
+|200|Success|<<OpcoResList>>
+|401|Unauthorized|No Content
+|403|Forbidden|No Content
+|404|Not Found|No Content
+|500|Failure|No Content
+|===
+
+==== Consumes
+
+* application/json
+
+==== Produces
+
+* */*
+
+==== Tags
+
+* opco-rest-service
+
+=== getOpcoById
+----
+GET /rest/opco/getOpcoById/{id}
+----
+
+==== Parameters
+[options="header"]
+|===
+|Type|Name|Description|Required|Schema|Default
+|PathParameter|id|id|true|integer (int64)|
+|===
+
+==== Responses
+[options="header"]
+|===
+|HTTP Code|Description|Schema
+|200|Success|<<OpcoResponse>>
+|401|Unauthorized|No Content
+|403|Forbidden|No Content
+|404|Not found|No Content
+|500|Failure|No Content
+|===
+
+==== Consumes
+
+* application/json
+
+==== Produces
+
+* */*
+
+==== Tags
+
+* opco-rest-service
+
+=== updatePrefixSuffix
+----
+PUT /rest/opco/updatePrefixSuffix
+----
+
+==== Parameters
+[options="header"]
+|===
+|Type|Name|Description|Required|Schema|Default
+|BodyParameter|opcoRequest|opcoRequest|true|<<OpcoRequest>>|
+|===
+
+==== Responses
+[options="header"]
+|===
+|HTTP Code|Description|Schema
+|200|Success|<<OpcoResponse>>
+|201|Created|No Content
+|401|Unauthorized|No Content
+|403|Forbidden|No Content
+|404|Not found|No Content
+|500|Failure|No Content
+|===
+
+==== Consumes
+
+* application/json
+
+==== Produces
+
+* */*
+
+==== Tags
+
+* opco-rest-service
+
+=== createPackage
+----
+POST /rest/package/createPackage
+----
+
+==== Parameters
+[options="header"]
+|===
+|Type|Name|Description|Required|Schema|Default
+|BodyParameter|pkgCreateRequest|pkgCreateRequest|true|<<PackageCreateRequest>>|
+|===
+
+==== Responses
+[options="header"]
+|===
+|HTTP Code|Description|Schema
+|200|Success|<<PackageResponseRoot>>
+|201|Created|No Content
+|401|Unauthorized|No Content
+|403|Forbidden|No Content
+|404|Not found|No Content
+|500|Failure|No Content
+|===
+
+==== Consumes
+
+* application/json
+
+==== Produces
+
+* */*
+
+==== Tags
+
+* package-rest-service
+
+=== getAllPackages
+----
+GET /rest/package/getAllPackages
+----
+
+==== Parameters
+[options="header"]
+|===
+|Type|Name|Description|Required|Schema|Default
+|QueryParameter|opcoId|opcoId|true|integer (int64)|
+|QueryParameter|status|status|false|integer (int64)|
+|===
+
+==== Responses
+[options="header"]
+|===
+|HTTP Code|Description|Schema
+|200|Success|<<PackageResList>>
+|401|Unauthorized|No Content
+|403|Forbidden|No Content
+|404|Not found|No Content
+|500|Failure|No Content
+|===
+
+==== Consumes
+
+* application/json
+
+==== Produces
+
+* */*
+
+==== Tags
+
+* package-rest-service
+
+=== getPackageById
+----
+GET /rest/package/getPackageById/{id}
+----
+
+==== Parameters
+[options="header"]
+|===
+|Type|Name|Description|Required|Schema|Default
+|PathParameter|id|id|true|integer (int64)|
+|===
+
+==== Responses
+[options="header"]
+|===
+|HTTP Code|Description|Schema
+|200|Success|<<PackageResponseRoot>>
+|401|Unauthorized|No Content
+|403|Forbidden|No Content
+|404|Not found|No Content
+|500|Failure|No Content
+|===
+
+==== Consumes
+
+* application/json
+
+==== Produces
+
+* */*
+
+==== Tags
+
+* package-rest-service
+
+=== updatePackage
+----
+PUT /rest/package/updatePackage
+----
+
+==== Parameters
+[options="header"]
+|===
+|Type|Name|Description|Required|Schema|Default
+|BodyParameter|pkgUpdRequest|pkgUpdRequest|true|<<PackageUpdateRequest>>|
+|===
+
+==== Responses
+[options="header"]
+|===
+|HTTP Code|Description|Schema
+|200|Success|<<PackageResponseRoot>>
+|201|Created|No Content
+|401|Unauthorized|No Content
+|403|Forbidden|No Content
+|404|Not found|No Content
+|500|Failure|No Content
+|===
+
+==== Consumes
+
+* application/json
+
+==== Produces
+
+* */*
+
+==== Tags
+
+* package-rest-service
+
+=== createSME
+----
+POST /rest/sme/createSME
+----
+
+==== Parameters
+[options="header"]
+|===
+|Type|Name|Description|Required|Schema|Default
+|BodyParameter|smeRequest|smeRequest|true|<<SMERequest>>|
+|===
+
+==== Responses
+[options="header"]
+|===
+|HTTP Code|Description|Schema
+|200|Success|<<SMEResponse>>
+|201|Created|No Content
+|401|Unauthorized|No Content
+|403|Forbidden|No Content
+|404|Not Found|No Content
+|500|Failure|No Content
+|===
+
+==== Consumes
+
+* application/json
+
+==== Produces
+
+* */*
+
+==== Tags
+
+* sme-rest-service
+
+=== getAllSMEByOpcoId
+----
+GET /rest/sme/getAllSMEByOpcoId/{id}
+----
+
+==== Parameters
+[options="header"]
+|===
+|Type|Name|Description|Required|Schema|Default
+|PathParameter|id|id|true|integer (int64)|
+|===
+
+==== Responses
+[options="header"]
+|===
+|HTTP Code|Description|Schema
+|200|Success|<<SMEResList>>
+|401|Unauthorized|No Content
+|403|Forbidden|No Content
+|404|Not Found|No Content
+|500|Failure|No Content
+|===
+
+==== Consumes
+
+* application/json
+
+==== Produces
+
+* */*
+
+==== Tags
+
+* sme-rest-service
+
+=== getSMEById
+----
+GET /rest/sme/getSMEById/{id}
+----
+
+==== Parameters
+[options="header"]
+|===
+|Type|Name|Description|Required|Schema|Default
+|PathParameter|id|id|true|integer (int64)|
+|===
+
+==== Responses
+[options="header"]
+|===
+|HTTP Code|Description|Schema
+|200|Success|<<SMEResponse>>
+|401|Unauthorized|No Content
+|403|Forbidden|No Content
+|404|Not Found|No Content
+|500|Failure|No Content
+|===
+
+==== Consumes
+
+* application/json
+
+==== Produces
+
+* */*
+
+==== Tags
+
+* sme-rest-service
+
+=== searchSME
+----
+GET /rest/sme/searchSME/{id}/{smeName}
+----
+
+==== Parameters
+[options="header"]
+|===
+|Type|Name|Description|Required|Schema|Default
+|PathParameter|id|id|true|integer (int64)|
+|PathParameter|smeName|smeName|true|string|
+|===
+
+==== Responses
+[options="header"]
+|===
+|HTTP Code|Description|Schema
+|200|Success|<<SMEResList>>
+|401|Unauthorized|No Content
+|403|Forbidden|No Content
+|404|Not Found|No Content
+|500|Failure|No Content
+|===
+
+==== Consumes
+
+* application/json
+
+==== Produces
+
+* */*
+
+==== Tags
+
+* sme-rest-service
+
+=== updateSME
+----
+PUT /rest/sme/updateSME
+----
+
+==== Parameters
+[options="header"]
+|===
+|Type|Name|Description|Required|Schema|Default
+|BodyParameter|smeRequest|smeRequest|true|<<SMERequest>>|
+|===
+
+==== Responses
+[options="header"]
+|===
+|HTTP Code|Description|Schema
+|200|Success|<<SMEResList>>
+|201|Created|No Content
+|401|Unauthorized|No Content
+|403|Forbidden|No Content
+|404|Not Found|No Content
+|500|Failure|No Content
+|===
+
+==== Consumes
+
+* application/json
+
+==== Produces
+
+* */*
+
+==== Tags
+
+* sme-rest-service
+
+=== createUser
+----
+POST /rest/user/createUser
+----
+
+==== Parameters
+[options="header"]
+|===
+|Type|Name|Description|Required|Schema|Default
+|BodyParameter|userRequest|userRequest|true|<<UserRequest>>|
+|===
+
+==== Responses
+[options="header"]
+|===
+|HTTP Code|Description|Schema
+|201|Created|<<UserResponse>>
+|401|Unauthorized|No Content
+|403|Forbidden|No Content
+|404|Not Found|No Content
+|===
+
+==== Consumes
+
+* application/json
+
+==== Produces
+
+* */*
+
+==== Tags
+
+* user-rest-service
+
